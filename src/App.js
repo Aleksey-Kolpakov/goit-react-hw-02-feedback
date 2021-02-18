@@ -4,6 +4,7 @@ import FeedBack from './components/FeedBack/FeedBack';
 import Statistics from './components/Statistics/Statistics';
 import SectionTitle from './components/SectionTitle/SectionTitle';
 import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
+import Notification from './components/Notification/Notification'
 
 
 const options = ['good', 'neutral', 'bad'];
@@ -33,7 +34,7 @@ class App extends Component {
       <div className={styles.container}>
         <SectionTitle title="Please leave Feedback">
           <FeedbackOptions options={options} onLeaveFeedback={this.addFeedback} />
-          {total ? <Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage} /> : ''}
+          {total ? <Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage} /> : <Notification message="No feedback given" />}
         </SectionTitle>
       </div>
     );
